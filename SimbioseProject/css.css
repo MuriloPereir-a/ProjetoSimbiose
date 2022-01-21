@@ -1,0 +1,70 @@
+#buttAdd{
+    width: 50px;
+    height: 30px;
+    border: 2px solid rgb(200, 190, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;   
+    margin-left: 20%;      
+}
+#botaoSave{
+    width: 80px;
+    height: 30px;
+    border: 2px solid rgb(200, 190, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;   
+    margin-left: 5%; 
+    display: none;
+}
+#clear{
+    width: 80px;
+    height: 30px;
+    border: 2px solid rgb(200, 190, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;   
+    margin-left: 5%; 
+    display: none;
+}
+#botaoLixo{
+    width: 40px;
+    height: 25px;
+    border: 2px solid rgb(200, 190, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;  
+}
+#botaoEdit{
+    width: 40px;
+    height: 25px;
+    border: 2px solid rgb(200, 190, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black; 
+}
+.card{
+    margin: auto;
+    padding: 2%;
+    border: 2px solid rgb(200, 190, 255);
+    margin-top: 7%;
+    width: 800px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+    text-align: center;
+    
+}
+#cardInside{
+    display: flex;
+    justify-content: center;          
+ }
+ #nome{
+    padding: 2%;
+    border: 2px solid rgb(200, 190, 255);
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 2px 2px 2px black;
+}
+#conteudo{
+    width: 69vw;
+}
