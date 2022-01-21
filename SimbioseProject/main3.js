@@ -52,6 +52,10 @@ function remove(product){
   clientsArray.splice(indice,1)
 
   let display = document.querySelector('.itensList');
+  let clearAll = document.querySelector('#clear');
+  clearAll.style.display = 'block'
+  let buttonSave = document.querySelector('#botaoSave');
+  buttonSave.style.display = 'none'
 
   display.innerHTML = '';
   x=0;
@@ -79,6 +83,8 @@ function remove(product){
 
 function clearAll(){
   let clearDisplay = document.querySelector('.itensList')
+  let clearAll = document.querySelector('#clear');
+    clearAll.style.display = 'none'
 
   array = [];
 
@@ -95,12 +101,13 @@ function edit(item){
     let ind = array[item]
 
     document.querySelector('#nome').value = ind;
-
+  
     editIndice = item;
 
     console.log(editIndice)
     let botaoSave = document.querySelector('#botaoSave');
     botaoSave.style.display = 'block';
+    
 
 }
 function save(){
@@ -142,6 +149,8 @@ function save(){
     console.log(array)
     editIndice = -1;
     document.querySelector('#nome').value = '';
+    let botaoSave = document.querySelector('#botaoSave');
+    botaoSave.style.display = 'none';
      
 }
 
