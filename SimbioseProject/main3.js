@@ -1,9 +1,9 @@
-var array = [];
-var x = 0;
-var editIndice = -1;
-var clientsArray = [{}]
-clientsArray.shift();
-api()
+var array = []; //array dos "produtos"
+var count = 0; //contador e indice global;
+var editIndice = -1; //quebrar o indice do array ao editar;
+var clientsArray = [{}]//array da api;
+clientsArray.shift(); 
+api() //resolver o bug do pos 0;
 
 function addToCart(){
     
@@ -24,25 +24,25 @@ function addToCart(){
 
     display.innerHTML += `
     <div class="container text-center" id="conteudo">
-    <div id='${x}' class="row">
+    <div id='${count}' class="row"> 
       <div class="col-sm">
-        ${clientsArray[x].clientEmailApi}<br>${clientsArray[x].clientNameApi}
+        ${clientsArray[count].clientEmailApi}<br>${clientsArray[count].clientNameApi}
       </div>
       <div class="col-sm">
-        ${array[x]}
+        ${array[count]}
       </div>
       <div class="col-sm">
-        <ion-icon name="trash-outline" id="botaoLixo" onclick="remove('${array[x]}')"></ion-icon>
-              <ion-icon name="create-outline" id="botaoEdit" onclick="edit(${x})"></ion-icon>
+        <ion-icon name="trash-outline" id="botaoLixo" onclick="remove('${array[count]}')"></ion-icon>
+              <ion-icon name="create-outline" id="botaoEdit" onclick="edit(${count})"></ion-icon>
       </div>
     </div>
   </div>`
-  
-  x++
-  document.querySelector('#nome').value = '';
+  //div com ID=count iterando por adição, pra buscar
+  count++
+  document.querySelector('#nome').value = ''; //zerar o texto após o disparo;
 
 }
-
+//product = produto clicado
 function remove(product){
 
   let indice = array.indexOf(product);
@@ -58,24 +58,25 @@ function remove(product){
   buttonSave.style.display = 'none'
 
   display.innerHTML = '';
-  x=0;
-  while(x < array.length){
+  count=0;
+  //zerando e setando o array novamente
+  while(count < array.length){
       display.innerHTML += `
       <div class="container text-center" id="conteudo">
-    <div id='${x}' class="row">
+    <div id='${count}' class="row">
       <div class="col-sm">
-        ${clientsArray[x].clientEmailApi}<br>${clientsArray[x].clientNameApi}
+        ${clientsArray[count].clientEmailApi}<br>${clientsArray[count].clientNameApi}
       </div>
       <div class="col-sm">
-        ${array[x]}
+        ${array[count]}
       </div>
       <div class="col-sm">
-        <ion-icon name="trash-outline" id="botaoLixo" onclick="remove('${array[x]}')"></ion-icon>
-              <ion-icon name="create-outline" id="botaoEdit" onclick="edit(${x})"></ion-icon>
+        <ion-icon name="trash-outline" id="botaoLixo" onclick="remove('${array[count]}')"></ion-icon>
+              <ion-icon name="create-outline" id="botaoEdit" onclick="edit(${count})"></ion-icon>
       </div>
     </div>
   </div>`
-    x++
+    count++
   }
   console.log(array)
     
@@ -89,7 +90,7 @@ function clearAll(){
   array = [];
 
   clearDisplay.innerHTML = ''
-  x = 0;
+  count = 0;
   clientsArray.splice(0, clientsArray.length +1)
   api()
   console.log(array)
@@ -97,16 +98,20 @@ function clearAll(){
 
 function edit(item){
   
-    
-    let ind = array[item]
+    //item? => Índice da tag com ID iteravel 
 
-    document.querySelector('#nome').value = ind;
+    let nomeDoEditado = array[item]
+
+    document.querySelector('#nome').value = nomeDoEditado;
   
-    editIndice = item;
+    
+
+    editIndice = item; //variavel recebendo o indice correto, para o save;
 
     console.log(editIndice)
     let botaoSave = document.querySelector('#botaoSave');
     botaoSave.style.display = 'block';
+    document.querySelector('#nome').value = '';
     
 
 }
@@ -119,35 +124,37 @@ function save(){
     if(product == ''){
       return; 
     }
+    //editIndice do "edit()"
     if(editIndice > -1){
       array[editIndice] = product
   }
+
     //array.splice(indice, 1 , product2)
     
 
-    x = 0;
+    count = 0;
     display.innerHTML = '';
-    while(x < array.length){
+    while(count < array.length){
       display.innerHTML += `
       <div class="container text-center" id="conteudo">
-    <div id='${x}' class="row">
+    <div id='${count}' class="row">
       <div class="col-sm">
-        ${clientsArray[x].clientEmailApi}<br>${clientsArray[x].clientNameApi}
+        ${clientsArray[count].clientEmailApi}<br>${clientsArray[count].clientNameApi}
       </div>
       <div class="col-sm">
-        ${array[x]}
+        ${array[count]}
       </div>
       <div class="col-sm">
-        <ion-icon name="trash-outline" id="botaoLixo" onclick="remove('${array[x]}')"></ion-icon>
-              <ion-icon name="create-outline" id="botaoEdit" onclick="edit(${x})"></ion-icon>
+        <ion-icon name="trash-outline" id="botaoLixo" onclick="remove('${array[count]}')"></ion-icon>
+              <ion-icon name="create-outline" id="botaoEdit" onclick="edit(${count})"></ion-icon>
       </div>
     </div>
   </div>`
 
-      x++
+      count++
     }
     console.log(array)
-    editIndice = -1;
+    editIndice = -1; //reinicia a variável.
     document.querySelector('#nome').value = '';
     let botaoSave = document.querySelector('#botaoSave');
     botaoSave.style.display = 'none';
