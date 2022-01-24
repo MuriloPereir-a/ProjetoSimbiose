@@ -5,7 +5,7 @@
     border-radius: 30px;
     cursor: pointer;
     margin-top: 15%;
-    
+    border-bottom-width: 5px;
     margin-left: 20%;      
 
 }
@@ -15,7 +15,7 @@
     border: 1px solid rgb(200, 190, 255);
     border-radius: 30px;
     cursor: pointer;
-      
+    border-bottom-width: 5px;
     margin-left: 5%; 
     display: none;
     margin-top: 1%;
@@ -28,6 +28,8 @@
     margin-left: 5%; 
     display: none;
     margin-top: 1%;
+    border-bottom-width: 5px;
+    border-color: rgb(200, 190, 255);
 }
 #clear:hover{
     background-color: rgb(194, 7, 7);
@@ -39,7 +41,7 @@
     border: 1px solid rgb(200, 190, 255);
     border-radius: 30px;
     cursor: pointer;
-    
+    border-bottom-width: 5px;
 }
 #botaoLixo:hover{
     background-color: rgb(194, 7, 7);
@@ -51,12 +53,16 @@
     border: 1px solid rgb(200, 190, 255);
     border-radius: 30px;
     cursor: pointer;
+    border-bottom-width: 5px;
     
 }
 .card{
     margin: auto;
     padding: 2%;
-    border: 2px solid rgb(200, 190, 255);
+    border-bottom-width: 5px;
+    border-top-width: 2px;
+    border-style: solid;
+    border-color: rgb(200, 190, 255);
     margin-top: 7%;
     width: 800px;
     border-radius: 20px;
@@ -76,10 +82,13 @@ ion-icon:hover{
  }
  #nome{
     padding: 2%;
-    border: 2px solid rgb(200, 190, 255);
+    
     border-radius: 20px;
     width: 350px;
     outline: none;
+    border-bottom-width: 5px;
+    border-style: solid;
+    border-color: rgb(200, 190, 255);
     
 }
 #conteudo{
