@@ -32,7 +32,7 @@
     border-color: rgb(200, 190, 255);
 }
 #clear:hover{
-    background-color: rgb(194, 7, 7);
+    background: linear-gradient(to right, red, rgb(122, 13, 13));
     color: white;
 }
 #botaoLixo{
@@ -44,7 +44,7 @@
     border-bottom-width: 5px;
 }
 #botaoLixo:hover{
-    background-color: rgb(194, 7, 7);
+    background: linear-gradient(to right, red, rgb(122, 13, 13));
     color: white;
 }
 #botaoEdit{
@@ -55,6 +55,9 @@
     cursor: pointer;
     border-bottom-width: 5px;
     
+}
+#botaoEdit:hover{
+    background: linear-gradient(to right,rgba(200, 190, 255, 0.158), rgb(200, 190, 255));
 }
 .card{
     margin: auto;
@@ -71,11 +74,12 @@
       
 }
 .card:hover{
-    background-color: rgba(200, 190, 255, 0.158);
+    background: linear-gradient(to right,rgb(200, 190, 255), rgba(200, 190, 255, 0.158));
 }
-ion-icon:hover{
-    background-color: rgba(200, 190, 255, 0.788);
+#buttAdd:hover{
+    background: linear-gradient(to right,rgba(200, 190, 255, 0.158), rgb(200, 190, 255))
 }
+
 #cardInside{
     display: flex;
     justify-content: center;          
